@@ -4,6 +4,7 @@ import re
 import main
 
 
+
 class Getter:
      
     def __init__(self):      
@@ -57,11 +58,9 @@ def get_movies():
 
 def get_movie_cast(mylist,num_pick):
 
-
     movie_id = mylist[num_pick-1]["id"]
     
     content = getter_instance.get_cast(movie_id)
-
 
     actors = list()
 
@@ -70,7 +69,9 @@ def get_movie_cast(mylist,num_pick):
             actor_name = person.get("name")
             actors.append(actor_name)
 
-    print(actors)
+    cropped_actors_list = actors[:6]
+
+    return cropped_actors_list
 
 
 
@@ -86,4 +87,4 @@ def get_movie_details(mylist,num_pick):
 
     formatted_data = json.dumps(content, indent=4)
 
-    print(formatted_data)
+    return content
