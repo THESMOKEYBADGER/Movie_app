@@ -7,11 +7,13 @@ class menu:
         while True:
 
             # Display the menu options
+            print("\x1b[34m-------------------------------\x1b[0m")
             print("Menu:")
             print("1. See movie Detials")
             print("2. See Cast")
             print("3. Option 3")
-            print("4. Quit" + "\n")
+            print("4. Quit" )
+            print("\x1b[34m-------------------------------\x1b[0m")
 
             choice = input("Enter your choice: " + "\n")
 

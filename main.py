@@ -63,18 +63,16 @@ def choose_movie(mylist):
         except ValueError:
             print("Please enter a valid numerical character in the range provided:  ")
 
-    print(f"\n\033[32m{mylist[num_pick]['title']}\033[0m\n")
+    print(f"\n\033[32m{mylist[num_pick-1]['title']}\033[0m\n")
 
     return num_pick
 
 
 def print_actors(mylist, num_pick):
 
-    print("\n" + f"Here are the top acotors in \033[32m{mylist[num_pick]['title']}\033[0m:\n")
+    print("\n" + f"Here are the top acotors in \033[32m{mylist[num_pick-1]['title']}\033[0m:\n")
 
     actors = pull.get_movie_cast(mylist, num_pick)
-
-    
 
     for actor in actors:
         print("- ", actor)
@@ -93,12 +91,12 @@ def print_movie_details(mylist, num_pick):
 
     revenue = format(int(data['revenue']), ',')
 
-    print("\n" + "Title:", f"\033[32m{title}\033[0m")
+    print("\n" + "Title:", f"\033[32m{title}\033[0m\n")
     print("Overview:", overview)
     print("Release date:", release_date,)
     print("Run time:", run_time,  " minutes")
     print("Production companies:", ", ".join(production_companies))
-    print("Revenue: $", revenue + "/n")
+    print("Revenue: $", revenue + "\n")
 
 
 def __main__():
