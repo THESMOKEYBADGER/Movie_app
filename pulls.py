@@ -23,13 +23,6 @@ class Getter:
 
         link = f"search/movie?api_key=ff475e50eb788ac007dc0eb0bddede94&language=en-US&query={movie_input}&page=1&include_adult=false"
 
-        print("\n")
-
-        for i in tqdm(range(100), desc="Loading...", ascii=False, ncols=75):
-            time.sleep(0.005)
-
-        print("\n")
-
         return self.make_request(link)
 
     def get_cast(self, movie_id):

@@ -1,6 +1,7 @@
 import os
 import curses
 import time
+from tqdm import tqdm
 import pulls as pull
 import menu as menu
 
@@ -8,6 +9,14 @@ import menu as menu
 def movie_enter():
 
     movie_input = input("\n" + "Enter the title of the movie you'd like to see: ")
+
+    print("\n")
+
+    for i in tqdm(range(100), desc="Loading...", ascii=False, ncols=75):
+        time.sleep(0.005)
+
+    print("\n")
+    
     return movie_input
 
 
@@ -16,7 +25,7 @@ def choose_movie(mylist):
     this_list = mylist[:15]
 
     if len(mylist) <= 10:
-        print(f"Here are the {len(mylist)} movies:\n")
+        print(f"Here are the top {len(mylist)} results:\n")
 
     elif len(mylist) >= 15:
         print("Here are the top 15 results:\n")
@@ -63,7 +72,7 @@ def choose_movie(mylist):
         except ValueError:
             print("Please enter a valid numerical character in the range provided:  ")
 
-    print(f"\n\033[32m{mylist[num_pick-1]['title']}\033[0m\n")
+    print(f"\n\033[32m{mylist[num_pick-1]['title']}\033[0m")
 
     return num_pick
 

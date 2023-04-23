@@ -7,7 +7,7 @@ class menu:
         while True:
 
             # Display the menu options
-            print("\x1b[34m-------------------------------\x1b[0m")
+            print("\n\x1b[34m-------------------------------\x1b[0m")
             print("Menu:")
             print("1. See movie Detials")
             print("2. See Cast")
@@ -16,6 +16,9 @@ class menu:
             print("\x1b[34m-------------------------------\x1b[0m")
 
             choice = input("Enter your choice: " + "\n")
+
+            print("\033[F\033[K", end="")
+            print("\033[F\033[K", end="")
 
             if choice == '1': 
                 print("\n" "Option 1 selected." "\n" )
@@ -39,7 +42,7 @@ class menu:
                 
             else:
                 # Handle invalid input
-                print("Invalid choice. Please try again.")
+                print("\n\033[31mInvalid choice. Please try again.\033[0m")
         
 
 
