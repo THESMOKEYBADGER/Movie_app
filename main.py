@@ -1,9 +1,9 @@
 import os
-import curses
 import time
 from tqdm import tqdm
 import pulls as pull
 import menu as menu
+import os
 
 
 def movie_enter():
@@ -55,9 +55,15 @@ def choose_movie(mylist):
         movie_enter()
         choose_movie(mylist)
 
-    print("\033[F\033[K", end="")
-    print("\033[F\033[K", end="")
-    print("\033[F\033[K", end="")
+    
+    os.system("cls")
+    os.system("cls")
+    os.system("cls")
+
+
+    # print("\033[F\033[K", end="")
+    # print("\033[F\033[K", end="")
+    # print("\033[F\033[K", end="")
 
 
     while True:
