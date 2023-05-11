@@ -1,3 +1,5 @@
+
+# Import required modules
 import os
 import time
 from tqdm import tqdm
@@ -6,6 +8,8 @@ import menu as menu
 import os
 
 
+
+# Define a function to enter the movie title
 def movie_enter():
 
     movie_input = input("\n" + "Enter the title of the movie you'd like to see: ")
@@ -20,6 +24,8 @@ def movie_enter():
     return movie_input
 
 
+
+# Define a function to choose a movie from the list of search results
 def choose_movie(mylist):
 
     this_list = mylist[:15]
@@ -61,11 +67,6 @@ def choose_movie(mylist):
     os.system("cls")
 
 
-    # print("\033[F\033[K", end="")
-    # print("\033[F\033[K", end="")
-    # print("\033[F\033[K", end="")
-
-
     while True:
         try:
             num_pick = int(
@@ -83,6 +84,8 @@ def choose_movie(mylist):
     return num_pick
 
 
+
+# Define a function to print the top actors in the chosen movie
 def print_actors(mylist, num_pick):
 
     print("\n" + f"Here are the top acotors in \033[32m{mylist[num_pick-1]['title']}\033[0m:\n")
@@ -93,6 +96,8 @@ def print_actors(mylist, num_pick):
         print("- ", actor)
 
 
+
+# Define a function to print the details of the chosen movie
 def print_movie_details(mylist, num_pick):
 
     data = pull.get_movie_details(mylist, num_pick)
@@ -114,6 +119,7 @@ def print_movie_details(mylist, num_pick):
     print("Revenue: $", revenue + "\n")
 
 
+
 def __main__():
 
     mylist = pull.get_movies()
@@ -126,9 +132,6 @@ def __main__():
 
     menu.menu.print_menu(mylist, num_pick)
 
-    # print_movie_details(mylist, num_pick)
-
-    # print_actors(mylist, num_pick)
 
 
 if __name__ == "__main__":
