@@ -37,6 +37,12 @@ class Getter:
         return self.make_request(link)
     
 
+    # Method to see similar movies 
+    def get_similar(self,movie_id):
+        link = f"movie/{movie_id}/similar?api_key=ff475e50eb788ac007dc0eb0bddede94&language=en-US&page=1"
+        return self.make_request(link)
+    
+
 
 # Creating an instance of the Getter class
 getter_instance = Getter()
@@ -84,3 +90,17 @@ def get_movie_details(mylist, num_pick):
     formatted_data = json.dumps(content, indent=4)
 
     return content
+
+# A function to get a list of similar movies 
+
+def get_similar_movies(mylist, num_pick):
+    print("Started")
+
+    movie_id = mylist[num_pick-1]["id"] 
+    content = getter_instance.get_similar(movie_id)    
+
+    similar_movies = list()
+
+    formatted_data = json.dumps(content, indent=4)
+
+    print(formatted_data)

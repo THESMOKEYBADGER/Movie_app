@@ -120,9 +120,21 @@ def print_movie_details(mylist, num_pick):
 
 
 
+def find_similar_movies():
+
+
+
+
+    return
+
+
+
 def __main__():
 
+
+
     mylist = pull.get_movies()
+    
 
     while len(mylist) == 0:
         print("\n\033[31mERROR: No results found!\033[0m\n")
@@ -130,9 +142,13 @@ def __main__():
 
     num_pick = choose_movie(mylist)
 
+    pull.get_similar_movies(mylist,num_pick)
+
     menu.menu.print_menu(mylist, num_pick)
 
 
 
 if __name__ == "__main__":
+
+    
     __main__()
